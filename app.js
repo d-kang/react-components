@@ -2,6 +2,7 @@
 class App extends React.Component {
   constructor() {
     super();
+
   }
 
   render() {
@@ -22,8 +23,10 @@ const GroceryList = (props) => {
   return (
     <div>
       <ul>
-        <li onClick={onListItemClick}>{props.groceryList[0]}</li>
-        <li onClick={onListItemClick}>{props.groceryList[1]}</li>
+        { props.groceryList.map(item =>
+        <li onClick={onListItemClick}>{item}</li>) }
+        {/* <li onClick={onListItemClick}>{props.groceryList[0]}</li>
+        <li onClick={onListItemClick}>{props.groceryList[1]}</li> */}
       </ul>
     </div>
 
